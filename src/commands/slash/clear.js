@@ -13,7 +13,7 @@ module.exports = {
             return interaction.reply({
                 embeds: [new EmbedBuilder()
                     .setColor('#ff0000')
-                    .setDescription('❌ No music is currently playing!')],
+                    .setDescription(':x: No music is currently playing!')],
                 ephemeral: true
             });
         }
@@ -23,7 +23,7 @@ module.exports = {
             return interaction.reply({
                 embeds: [new EmbedBuilder()
                     .setColor('#ff0000')
-                    .setDescription('❌ You need to be in a voice channel to skip music!')],
+                    .setDescription(':x: You need to be in a voice channel to skip music!')],
                 ephemeral: true
             });
         }
@@ -34,7 +34,7 @@ module.exports = {
             return interaction.reply({
                 embeds: [new EmbedBuilder()
                     .setColor('#ff0000')
-                    .setDescription('❌ You need to be in the same voice channel as the bot!')],
+                    .setDescription(':x: You need to be in the same voice channel as the bot!')],
                 ephemeral: true
             });
         }
@@ -46,7 +46,7 @@ module.exports = {
             return interaction.reply({
                 embeds: [new EmbedBuilder()
                     .setColor('#00ff00')
-                    .setDescription('⏹️ No more songs in queue. Stopped the player!')]
+                    .setDescription(':stop_button: No more songs in queue. Stopped the player!')]
             });
         }
         
@@ -54,11 +54,11 @@ module.exports = {
         
         const embed = new EmbedBuilder()
             .setColor('#00ff00')
-            .setTitle('⏭️ queue cleared)
+            .setTitle(':track_next: queue cleared') // :wrench: FIXED QUOTE
             .setDescription(`Skipped **${currentTrack?.title || 'Unknown'}**`)
             .addFields(
-                { name: '📋 Queue', value: `queue cleared`, inline: true },
-                { name: '👤 cleared by', value: interaction.user.toString(), inline: true }
+                { name: ':clipboard: Queue', value: `queue cleared`, inline: true },
+                { name: ':bust_in_silhouette: cleared by', value: interaction.user.toString(), inline: true }
             )
             .setTimestamp();
         
